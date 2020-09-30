@@ -23,7 +23,11 @@ import Data.Text.Format.Functions (i2d)
 import Data.Text.Lazy.Builder
 import Data.Word (Word, Word8, Word16, Word32, Word64)
 import GHC.Base (quotInt, remInt)
+#ifdef  __GLASGOW_HASKELL__
+# if __GLASGOW_HASKELL__ < 900
 import GHC.Num (quotRemInteger)
+#endif
+#endif
 import GHC.Types (Int(..))
 
 #ifdef  __GLASGOW_HASKELL__
